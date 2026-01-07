@@ -13,7 +13,7 @@ Set up local tools first - CI/CD will use these.
 - [x] oxlint configuration
 - [x] oxfmt configuration
 - [x] npm scripts (`bun run lint`, `bun run format`)
-- [ ] Pre-commit hooks (optional)
+- [x] Pre-commit hooks (lefthook)
 - [x] **ADR:** 048-oxlint.md
 - [x] **ADR:** 049-oxfmt.md
 
