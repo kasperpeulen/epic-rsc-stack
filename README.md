@@ -62,11 +62,16 @@ bun run typecheck  # Type checking
 - **TypeScript Strict** - No `any` types, strict mode enabled
 - **Components** - shadcn/ui + Radix UI primitives + Tailwind CSS
 
+## Contributing
+
+Each PR should:
+1. Check off completed items in [MILESTONES.md](./MILESTONES.md)
+2. Write an ADR in `/docs/decisions/` for significant architectural decisions
+3. Include tests (E2E with Playwright, unit with Vitest)
+
 ## Documentation
 
-- [docs/](./docs/) - Feature documentation (ported from Epic Stack)
+- [MILESTONES.md](./MILESTONES.md) - Project progress tracking
 - [docs/decisions/](./docs/decisions/) - Architecture Decision Records
 - [React Router docs](https://reactrouter.com/)
 - [React Server Components guide](https://reactrouter.com/how-to/react-server-components)
-
-> **Note:** The docs in `/docs/` were copied from Epic Stack as a reference for features we're porting. They may describe functionality not yet implemented. Update each doc as we implement features or choose different technologies.
