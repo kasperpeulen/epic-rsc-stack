@@ -69,4 +69,4 @@ bun run typecheck  # Type checking
 - [React Router docs](https://reactrouter.com/)
 - [React Server Components guide](https://reactrouter.com/how-to/react-server-components)
 
-> **Note:** The docs in `/docs/` were copied from Epic Stack. When we choose different technologies or implementations, update the corresponding documentation to reflect our stack choices.
+> **Note:** The docs in `/docs/` were copied from Epic Stack as a reference for features we're porting. They may describe functionality not yet implemented. Update each doc as we implement features or choose different technologies.
