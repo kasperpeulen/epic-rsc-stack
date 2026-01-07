@@ -1,65 +1,69 @@
-# Welcome to React Router! (Experimental RSC)
+# Epic RSC Stack
 
-⚠️ **EXPERIMENTAL**: This template demonstrates React Server Components with React Router. This is experimental technology and not recommended for production use.
+Port of [Epic Stack](https://github.com/epicweb-dev/epic-stack) to modern patterns using React Server Components.
 
-A modern template for exploring React Server Components (RSC) with React Router, powered by Vite.
+⚠️ **EXPERIMENTAL**: This uses React Router v7 with RSC, which is experimental technology.
 
-## Features
+## Project Goal
 
-- 🧪 **Experimental React Server Components**
-- 🚀 Server-side rendering with RSC
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization with Vite
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-- 📚 [React Server Components guide](https://reactrouter.com/how-to/react-server-components)
+Port all Epic Stack features (routes, auth flows, CRUD, RBAC) using latest best practices. Fresh designs welcome - no pixel-perfect replication needed.
+
+Reference implementation: `../epic-stack-reference`
+
+## Stack
+
+| Category | Technology |
+|----------|------------|
+| Runtime | Bun |
+| Framework | React Router v7 + React 19 RSC |
+| Build | Vite 7 |
+| Styling | Tailwind CSS v4 + shadcn/ui |
+| Database | SQLite + Drizzle ORM + LiteFS |
+| Auth | @simplewebauthn, @node-rs/argon2, @epic-web/totp |
+| Validation | Zod + Conform |
+| Testing | Playwright (E2E), Vitest (unit) |
+| Linting | oxlint |
+| Formatting | oxfmt |
+| Deployment | Fly.io with branch deployments |
+| Monitoring | Sentry |
+| Email | Resend |
 
 ## Getting Started
 
-### Installation
-
-Install the dependencies:
-
 ```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
+bun install
+bun run dev
 ```
 
 Your application will be available at `http://localhost:5173`.
 
-## Building for Production
-
-Create a production build:
+## Commands
 
 ```bash
-npm run build
+bun run dev        # Start dev server
+bun run build      # Production build
+bun start          # Run production server
+bun run typecheck  # Type checking
 ```
 
-## Running Production Build
+## Architecture
 
-Run the production server:
+**Key directories:**
+- `/app/routes.ts` - Route configuration (file-system based routing)
+- `/app/root.tsx` - Root layout with error boundary
+- `/app/routes/` - Route components
+- `/docs/decisions/` - Architecture Decision Records
 
-```bash
-npm start
-```
+**Path alias:** `~/` maps to `./app/`
 
-## Understanding React Server Components
+## Code Patterns
 
-Learn more about React Server Components with React Router in our [comprehensive guide](https://reactrouter.com/how-to/react-server-components).
+- **Server Components First** - Only use client components (`"use client"`) when necessary
+- **TypeScript Strict** - No `any` types, strict mode enabled
+- **Components** - shadcn/ui + Radix UI primitives + Tailwind CSS
 
-## Styling
+## Documentation
 
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
-
----
-
-Built with ❤️ using React Router. 
+- [docs/decisions/](./docs/decisions/) - Architecture Decision Records
+- [React Router docs](https://reactrouter.com/)
+- [React Server Components guide](https://reactrouter.com/how-to/react-server-components)
