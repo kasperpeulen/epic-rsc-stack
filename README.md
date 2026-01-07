@@ -64,6 +64,9 @@ bun run typecheck  # Type checking
 
 ## Documentation
 
+- [docs/](./docs/) - Feature documentation (ported from Epic Stack)
 - [docs/decisions/](./docs/decisions/) - Architecture Decision Records
 - [React Router docs](https://reactrouter.com/)
 - [React Server Components guide](https://reactrouter.com/how-to/react-server-components)
+
+> **Note:** The docs in `/docs/` were copied from Epic Stack. When we choose different technologies or implementations, update the corresponding documentation to reflect our stack choices.
