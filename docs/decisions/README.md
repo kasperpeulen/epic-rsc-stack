@@ -23,12 +23,9 @@ Most decisions (001-046) are inherited from [Epic Stack](https://github.com/epic
 
 ### Epic RSC Stack Specific Decisions
 
-Starting from 050, we document decisions specific to Epic RSC Stack that differ from Epic Stack:
+Starting from 047, we document decisions specific to Epic RSC Stack that differ from or extend Epic Stack:
 
-- **050** - Drizzle ORM over Prisma
-- **051** - React Router v7 with RSC over Remix
-- **052** - oxlint and oxfmt over ESLint and Prettier
-- **053** - E2E Testing with Playwright (mandatory for all features)
+- **047** - Bun runtime over Node.js
 
 ## Format
 
