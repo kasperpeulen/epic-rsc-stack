@@ -1,0 +1,4 @@
+# Disable Bun's automatic .env loading to let Varlock manage environments
+# See: https://varlock.dev/integrations/bun/
+[run]
+env = false

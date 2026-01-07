@@ -19,15 +19,15 @@ Set up local tools first - CI/CD will use these.
 
 ### Environment Variables (Varlock)
 
-- [ ] Varlock setup for env management
-- [ ] `.env.development` - development defaults
-- [ ] `.env.test` - test environment
-- [ ] `.env.production` - production defaults
-- [ ] `.env.staging` - staging defaults
-- [ ] `.env.*.local` variants (gitignored) for secrets
-- [ ] Vite integration
-- [ ] **Reference:** [Epic Stack Discussion #1069](https://github.com/epicweb-dev/epic-stack/discussions/1069)
-- [ ] **ADR:** 050-varlock.md
+- [x] Varlock setup for env management
+- [x] `.env.development` - development defaults
+- [x] `.env.test` - test environment
+- [x] `.env.production` - production defaults
+- [x] `.env.staging` - staging defaults
+- [x] `.env.*.local` variants (gitignored) for secrets
+- [x] Vite integration
+- [x] **Reference:** [Epic Stack Discussion #1069](https://github.com/epicweb-dev/epic-stack/discussions/1069)
+- [x] **ADR:** 050-varlock.md
 
 ### Testing Setup
 
