@@ -32,6 +32,7 @@ Reference implementation: `../epic-stack-reference`
 
 ```bash
 bun install
+cp .env.local.example .env.local
 bun run dev
 ```
 
