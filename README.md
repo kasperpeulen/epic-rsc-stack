@@ -12,21 +12,21 @@ Reference implementation: `../epic-stack-reference`
 
 ## Stack
 
-| Category | Technology |
-|----------|------------|
-| Runtime | Bun |
-| Framework | React Router v7 + React 19 RSC |
-| Build | Vite 7 |
-| Styling | Tailwind CSS v4 + shadcn/ui |
-| Database | SQLite + Drizzle ORM + LiteFS |
-| Auth | @simplewebauthn, @node-rs/argon2, @epic-web/totp |
-| Validation | Zod + Conform |
-| Testing | Playwright (E2E), Vitest (unit) |
-| Linting | oxlint |
-| Formatting | oxfmt |
-| Deployment | Fly.io with branch deployments |
-| Monitoring | Sentry |
-| Email | Resend |
+| Category   | Technology                                       |
+| ---------- | ------------------------------------------------ |
+| Runtime    | Bun                                              |
+| Framework  | React Router v7 + React 19 RSC                   |
+| Build      | Vite 7                                           |
+| Styling    | Tailwind CSS v4 + shadcn/ui                      |
+| Database   | SQLite + Drizzle ORM + LiteFS                    |
+| Auth       | @simplewebauthn, @node-rs/argon2, @epic-web/totp |
+| Validation | Zod + Conform                                    |
+| Testing    | Playwright (E2E), Vitest (unit)                  |
+| Linting    | oxlint                                           |
+| Formatting | oxfmt                                            |
+| Deployment | Fly.io with branch deployments                   |
+| Monitoring | Sentry                                           |
+| Email      | Resend                                           |
 
 ## Getting Started
 
@@ -49,6 +49,7 @@ bun run typecheck  # Type checking
 ## Architecture
 
 **Key directories:**
+
 - `/app/routes.ts` - Route configuration (file-system based routing)
 - `/app/root.tsx` - Root layout with error boundary
 - `/app/routes/` - Route components
@@ -61,10 +62,12 @@ bun run typecheck  # Type checking
 - **Server Components First** - Only use client components (`"use client"`) when necessary
 - **TypeScript Strict** - No `any` types, strict mode enabled
 - **Components** - shadcn/ui + Radix UI primitives + Tailwind CSS
+- **Use Defaults** - Prefer tool defaults over custom configuration (e.g., `oxlint --init`)
 
 ## Contributing
 
 Each PR should:
+
 1. Check off completed items in [MILESTONES.md](./MILESTONES.md)
 2. Write an ADR in `/docs/decisions/` for significant architectural decisions
 3. Include tests (E2E with Playwright, unit with Vitest)

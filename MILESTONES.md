@@ -9,14 +9,16 @@ Port of [Epic Stack](https://github.com/epicweb-dev/epic-stack) to modern patter
 Set up local tools first - CI/CD will use these.
 
 ### Linting & Formatting
-- [ ] oxlint configuration
-- [ ] oxfmt configuration
-- [ ] npm scripts (`bun run lint`, `bun run format`)
-- [ ] Pre-commit hooks (optional)
-- [ ] **ADR:** 048-oxlint.md
-- [ ] **ADR:** 049-oxfmt.md
+
+- [x] oxlint configuration
+- [x] oxfmt configuration
+- [x] npm scripts (`bun run lint`, `bun run format`)
+- [x] Pre-commit hooks (lefthook)
+- [x] **ADR:** 048-oxlint.md
+- [x] **ADR:** 049-oxfmt.md
 
 ### Environment Variables (Varlock)
+
 - [ ] Varlock setup for env management
 - [ ] `.env.development` - development defaults
 - [ ] `.env.test` - test environment
@@ -28,6 +30,7 @@ Set up local tools first - CI/CD will use these.
 - [ ] **ADR:** 050-varlock.md
 
 ### Testing Setup
+
 - [ ] Vitest configuration
 - [ ] Playwright configuration
 - [ ] Test scripts (`bun run test`, `bun run test:e2e`)
@@ -40,6 +43,7 @@ Set up local tools first - CI/CD will use these.
 Now that local tooling exists, set up CI/CD to use it.
 
 ### GitHub Actions
+
 - [ ] Linting workflow (oxlint)
 - [ ] Type checking workflow (tsc)
 - [ ] Unit tests workflow (Vitest)
@@ -52,6 +56,7 @@ Now that local tooling exists, set up CI/CD to use it.
 - [ ] **ADR:** 051-github-actions.md
 
 ### Docker
+
 - [ ] Multi-stage Dockerfile
 - [ ] Bun runtime base image
 - [ ] Varlock integration
@@ -59,6 +64,7 @@ Now that local tooling exists, set up CI/CD to use it.
 - [ ] Health check configuration
 
 ### Fly.io Deployment
+
 - [ ] `fly.toml` configuration
 - [ ] Primary region setup
 - [ ] Memory swap (512MB)
@@ -69,6 +75,7 @@ Now that local tooling exists, set up CI/CD to use it.
 - [ ] **ADR:** 052-fly-deployment.md
 
 ### Branch Deployments
+
 - [ ] Preview environments for PRs
 - [ ] Automatic cleanup on merge
 - [ ] Environment-specific secrets
@@ -80,6 +87,7 @@ Now that local tooling exists, set up CI/CD to use it.
 Infrastructure and utilities that features depend on.
 
 ### Database (SQLite + Drizzle)
+
 - [ ] Drizzle ORM setup
 - [ ] SQLite configuration
 - [ ] Schema definition (User, Note, Session, etc.)
@@ -91,6 +99,7 @@ Infrastructure and utilities that features depend on.
 - [ ] **ADR:** 053-drizzle-orm.md
 
 ### Sessions & Cookies
+
 - [ ] Database-backed sessions
 - [ ] Session table in Drizzle schema
 - [ ] Cookie configuration (HTTP-only, SameSite)
@@ -98,6 +107,7 @@ Infrastructure and utilities that features depend on.
 - [ ] Sign out all sessions feature
 
 ### Email Service (Resend)
+
 - [ ] Resend API integration
 - [ ] Email sending utility
 - [ ] React Email templates
@@ -107,12 +117,14 @@ Infrastructure and utilities that features depend on.
 - [ ] Email change notification
 
 ### SVG Icons
+
 - [ ] Icon sprite generation (vite-plugin-icons-spritesheet)
 - [ ] Icon component
 - [ ] Source icons directory (`other/svg-icons/`)
 - [ ] Auto-generated sprite and types
 
 ### Image Storage (Tigris S3)
+
 - [ ] S3-compatible client setup
 - [ ] AWS Signature v4 signing
 - [ ] Upload utility (signed PUT)
@@ -122,12 +134,14 @@ Infrastructure and utilities that features depend on.
 - [ ] **ADR:** 054-tigris-storage.md
 
 ### Image Optimization
+
 - [ ] Sharp for server-side processing
 - [ ] Optimization endpoint
 - [ ] Responsive image sizes
 - [ ] Format conversion (WebP/AVIF)
 
 ### Monitoring (Sentry)
+
 - [ ] Sentry SDK setup (@sentry/react-router)
 - [ ] Error tracking
 - [ ] Performance profiling
@@ -136,30 +150,35 @@ Infrastructure and utilities that features depend on.
 - [ ] Release tracking
 
 ### Rate Limiting
+
 - [ ] express-rate-limit setup
 - [ ] Default limits (1000/min)
 - [ ] Strong limits for auth routes (100/min)
 - [ ] Strongest limits for verify/admin (10/min)
 
 ### Security Headers
+
 - [ ] Helmet.js configuration
 - [ ] Content Security Policy (report-only)
 - [ ] X-Robots-Tag configuration
 - [ ] Compression (gzip)
 
 ### Caching
+
 - [ ] @epic-web/cachified setup
 - [ ] LRU memory cache (L1)
 - [ ] SQLite cache database (L2)
 - [ ] Cache timing reports
 
 ### Form Validation
+
 - [ ] Zod schemas
 - [ ] Conform integration
 - [ ] Client + server validation
 - [ ] Error message handling
 
 ### Utilities
+
 - [ ] CUID generation (@paralleldrive/cuid2)
 - [ ] Client hints (@epic-web/client-hints)
 - [ ] Invariant helpers (@epic-web/invariant)
@@ -174,6 +193,7 @@ Infrastructure and utilities that features depend on.
 Complete auth system with multiple methods.
 
 ### Password Authentication
+
 - [ ] Argon2 password hashing (@node-rs/argon2)
 - [ ] Password table in schema
 - [ ] Login form
@@ -183,6 +203,7 @@ Complete auth system with multiple methods.
 - [ ] Change password
 
 ### Signup Flow
+
 - [ ] `/signup` route
 - [ ] Email input form
 - [ ] OTP code generation
@@ -193,6 +214,7 @@ Complete auth system with multiple methods.
 - [ ] Terms of Service agreement
 
 ### Login Flow
+
 - [ ] `/login` route
 - [ ] Username/password form
 - [ ] "Remember me" checkbox
@@ -200,6 +222,7 @@ Complete auth system with multiple methods.
 - [ ] Failed login handling
 
 ### Password Reset
+
 - [ ] `/forgot-password` route
 - [ ] Reset email sending
 - [ ] `/reset-password` route
@@ -207,6 +230,7 @@ Complete auth system with multiple methods.
 - [ ] New password form
 
 ### OAuth (GitHub)
+
 - [ ] GitHub OAuth app setup
 - [ ] `/auth/github` redirect route
 - [ ] `/auth/github/callback` handler
@@ -216,6 +240,7 @@ Complete auth system with multiple methods.
 - [ ] Pre-fill from GitHub profile
 
 ### Passkeys (WebAuthn)
+
 - [ ] @simplewebauthn/browser setup
 - [ ] @simplewebauthn/server setup
 - [ ] Passkey table in schema
@@ -226,6 +251,7 @@ Complete auth system with multiple methods.
 - [ ] Device type detection
 
 ### Two-Factor Authentication (TOTP)
+
 - [ ] @epic-web/totp setup
 - [ ] 2FA enable flow
 - [ ] QR code display
@@ -235,6 +261,7 @@ Complete auth system with multiple methods.
 - [ ] 2FA required for sensitive actions
 
 ### Session Management
+
 - [ ] Session creation on login
 - [ ] Session table with expiration
 - [ ] `/logout` route
@@ -248,11 +275,13 @@ Complete auth system with multiple methods.
 User-facing features - the actual Notes app.
 
 ### User Model
+
 - [ ] User table (id, email, username, name, createdAt, updatedAt)
 - [ ] UserImage table for profile photos
 - [ ] Role and Permission tables for RBAC
 
 ### Public User Profiles
+
 - [ ] `/users` - user directory
 - [ ] `/users/:username` - public profile
 - [ ] Display name, username, join date
@@ -261,6 +290,7 @@ User-facing features - the actual Notes app.
 - [ ] `/me` redirect to own profile
 
 ### Notes CRUD
+
 - [ ] Note table (id, title, content, ownerId, timestamps)
 - [ ] `/users/:username/notes` - list notes
 - [ ] `/users/:username/notes/new` - create note
@@ -270,6 +300,7 @@ User-facing features - the actual Notes app.
 - [ ] Owner-only edit/delete permissions
 
 ### Note Images
+
 - [ ] NoteImage table
 - [ ] Image upload in note editor
 - [ ] Image display in notes
@@ -278,11 +309,13 @@ User-facing features - the actual Notes app.
 - [ ] Image deletion
 
 ### User Settings
+
 - [ ] `/settings/profile` - settings overview
 - [ ] Edit username
 - [ ] Edit name
 
 ### Profile Photo
+
 - [ ] `/settings/profile/photo` route
 - [ ] Photo upload form
 - [ ] Photo preview
@@ -290,6 +323,7 @@ User-facing features - the actual Notes app.
 - [ ] Delete photo
 
 ### Change Email
+
 - [ ] `/settings/profile/change-email` route
 - [ ] New email input
 - [ ] 2FA verification (if enabled)
@@ -298,33 +332,39 @@ User-facing features - the actual Notes app.
 - [ ] Prevent duplicate emails
 
 ### Password Management UI
+
 - [ ] `/settings/profile/password` route
 - [ ] Change password form
 - [ ] `/settings/profile/password/create` for OAuth users
 
 ### Two-Factor UI
+
 - [ ] `/settings/profile/two-factor` route
 - [ ] Enable/disable 2FA
 - [ ] `/settings/profile/two-factor/verify` - setup verification
 
 ### Connections Management
+
 - [ ] `/settings/profile/connections` route
 - [ ] List connected providers
 - [ ] Delete connection (with password requirement check)
 
 ### Passkeys Management
+
 - [ ] `/settings/profile/passkeys` route
 - [ ] List registered passkeys
 - [ ] Register new passkey button
 - [ ] Delete passkey
 
 ### Download User Data
+
 - [ ] `/resources/download-user-data` endpoint
 - [ ] Collect all user data (profile, notes, connections, sessions)
 - [ ] Export as JSON
 - [ ] Include image URLs
 
 ### Delete Account
+
 - [ ] Delete account button in settings
 - [ ] Confirmation dialog
 - [ ] Delete all user data
@@ -337,6 +377,7 @@ User-facing features - the actual Notes app.
 Administrative features and final polish.
 
 ### Admin Cache Management
+
 - [ ] `/admin/cache` route
 - [ ] Admin role check
 - [ ] View cache entries (SQLite + LRU)
@@ -346,6 +387,7 @@ Administrative features and final polish.
 - [ ] Instance selection (distributed)
 
 ### RBAC Permissions
+
 - [ ] Permission model (action, entity, access)
 - [ ] Role model with permissions
 - [ ] User roles assignment
@@ -354,6 +396,7 @@ Administrative features and final polish.
 - [ ] requireUserWithRole utility
 
 ### Marketing Pages
+
 - [ ] `/` - Landing page
 - [ ] `/about` - About page
 - [ ] `/privacy` - Privacy policy
@@ -361,6 +404,7 @@ Administrative features and final polish.
 - [ ] `/support` - Support page
 
 ### SEO
+
 - [ ] `/robots.txt` route
 - [ ] `/sitemap.xml` route
 - [ ] Meta tags for all pages
@@ -368,11 +412,13 @@ Administrative features and final polish.
 - [ ] Canonical URLs
 
 ### Resource Routes
+
 - [ ] `/resources/healthcheck` - health status
 - [ ] `/resources/images` - image serving/optimization
 - [ ] `/resources/theme-switch` - dark/light mode toggle
 
 ### Error Handling
+
 - [ ] Root error boundary
 - [ ] 404 Not Found page
 - [ ] 500 Error page
@@ -380,6 +426,7 @@ Administrative features and final polish.
 - [ ] Error logging to Sentry
 
 ### Toast Notifications
+
 - [ ] Sonner setup
 - [ ] Success toasts
 - [ ] Error toasts
@@ -387,12 +434,14 @@ Administrative features and final polish.
 - [ ] Redirect with toast
 
 ### Theme Support
+
 - [ ] Dark/light mode toggle
 - [ ] System preference detection
 - [ ] Cookie-based persistence
 - [ ] No flash of unstyled content
 
 ### Testing
+
 - [ ] Playwright E2E test setup
 - [ ] Vitest unit test setup
 - [ ] Test database seeding
@@ -403,14 +452,14 @@ Administrative features and final polish.
 
 ## Summary
 
-| Phase | Focus | Description |
-|-------|-------|-------------|
-| 1 | Local Tooling | oxlint, oxfmt, Varlock, Vitest, Playwright |
-| 2 | CI/CD | GitHub Actions, Docker, Fly.io, branch deployments |
-| 3 | Technologies | Database, email, icons, images, monitoring, security |
-| 4 | Authentication | Password, OAuth, passkeys, 2FA, sessions |
-| 5 | Features | Profiles, notes, settings, data management |
-| 6 | Admin & Polish | Cache admin, RBAC, marketing, SEO, error handling |
+| Phase | Focus          | Description                                          |
+| ----- | -------------- | ---------------------------------------------------- |
+| 1     | Local Tooling  | oxlint, oxfmt, Varlock, Vitest, Playwright           |
+| 2     | CI/CD          | GitHub Actions, Docker, Fly.io, branch deployments   |
+| 3     | Technologies   | Database, email, icons, images, monitoring, security |
+| 4     | Authentication | Password, OAuth, passkeys, 2FA, sessions             |
+| 5     | Features       | Profiles, notes, settings, data management           |
+| 6     | Admin & Polish | Cache admin, RBAC, marketing, SEO, error handling    |
 
 **Total estimated items: ~150+**
 

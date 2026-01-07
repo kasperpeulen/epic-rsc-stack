@@ -30,6 +30,7 @@ Starting from 047, we document decisions specific to Epic RSC Stack that differ 
 ## Format
 
 Each decision document follows the template in `000-template.md` with:
+
 - **Date**: When the decision was made
 - **Status**: proposed | rejected | accepted | deprecated | superseded by [XXX]
 - **Context**: The background and reasoning

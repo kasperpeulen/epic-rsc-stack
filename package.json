@@ -6,7 +6,11 @@
     "build": "react-router build",
     "dev": "react-router dev",
     "start": "react-router-serve build/server/index.js",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "react-router typegen && tsc",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check"
   },
   "dependencies": {
     "@react-router/serve": "^7.12.0-pre.0",
@@ -23,6 +27,9 @@
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-rsc": "~0.5.11",
+    "lefthook": "^2.0.13",
+    "oxfmt": "^0.23.0",
+    "oxlint": "^1.38.0",
     "tailwindcss": "4.1.18",
     "typescript": "5.9.3",
     "vite": "7.3.0",
