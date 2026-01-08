@@ -1,0 +1,26 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# Run oxlint on changed JS/TS files (mirrors lefthook lint command)\nif [[ \"$CLAUDE_TOOL_INPUT_FILE_PATH\" =~ \\.(js|ts|jsx|tsx)$ ]]; then\n  output=$(bunx oxlint --fix \"$CLAUDE_TOOL_INPUT_FILE_PATH\" 2>&1)\n  exit_code=$?\n  if [ $exit_code -eq 0 ]; then\n    echo '{\"feedback\": \"Linting passed.\", \"suppressOutput\": true}'\n  else\n    echo \"{\\\"feedback\\\": \\\"Linting issues found:\\n$output\\\"}\" >&2\n    exit 1\n  fi\nfi",
+            "timeout": 30
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "# Run oxfmt on changed files (mirrors lefthook format command)\nif [[ \"$CLAUDE_TOOL_INPUT_FILE_PATH\" =~ \\.(js|ts|jsx|tsx|json|css|md)$ ]]; then\n  bunx oxfmt \"$CLAUDE_TOOL_INPUT_FILE_PATH\" 2>&1\n  exit_code=$?\n  if [ $exit_code -eq 0 ]; then\n    echo '{\"feedback\": \"Formatting applied.\", \"suppressOutput\": true}'\n  else\n    echo '{\"feedback\": \"Formatting failed.\"}' >&2\n    exit 1\n  fi\nfi",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
